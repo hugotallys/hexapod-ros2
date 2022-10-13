@@ -1,66 +1,58 @@
-// File:          hexapod_ik.cpp
-// Date:
-// Description:
-// Author:
-// Modifications:
-
-// You may need to add webots include files such as
-// <webots/DistanceSensor.hpp>, <webots/Motor.hpp>, etc.
-// and/or to add some other includes
+/*
+*
+* File: hexapod_ik.cpp
+* Date: 12/10/2022
+* Description: Inverse kinematics of a 18 dof hexapod robot.
+* Author: Hugo Tallys Martins Oliveira
+*
+*/
 
 #include <math.h>
 #include <webots/Robot.hpp>
 #include <webots/Motor.hpp>
 
-// All the webots classes are defined in the "webots" namespace
-using namespace webots;
+using namespace webots; // all the webots classes are defined in the "webots" namespace
 
-// This is the main program of your controller.
-// It creates an instance of your Robot instance, launches its
-// function(s) and destroys it at the end of the execution.
-// Note that only one instance of Robot should be created in
-// a controller program.
-// The arguments of the main function can be specified by the
-// "controllerArgs" field of the Robot node
+Robot *robot = new Robot(); // create the Robot instance.
+
+Motor *joint11 = robot->getMotor("joint11");
+Motor *joint12 = robot->getMotor("joint12");
+Motor *joint13 = robot->getMotor("joint13");
+
+int timeStep = (int)robot->getBasicTimeStep(); // get the time step of the current world.
+
+double deg2rad(double angle) {
+  return angle * (M_PI/180.0);
+}
+
+void delay(int ms) {
+  for (int iter = ms / timeStep; iter > 0; iter--) {
+    robot->step(timeStep);
+  } 
+}
+
+void writePosition(double a11, double a12, double a13) {  
+  joint11->setPosition( deg2rad( 90.0 - a11 ) );
+  joint12->setPosition( -deg2rad( 90.0 - a12 ) );
+  joint13->setPosition( deg2rad( 90.0 - a13 ) );
+  delay(500);
+}
+
 int main(int argc, char **argv) {
-  // create the Robot instance.
-  Robot *robot = new Robot();
-
-  // get the time step of the current world.
-  int timeStep = (int)robot->getBasicTimeStep();
-
-  // You should insert a getDevice-like function in order to get the
-  // instance of a device of the robot. Something like:
-  //  Motor *motor = robot->getMotor("motorname");
-  //  DistanceSensor *ds = robot->getDistanceSensor("dsname");
-  //  ds->enable(timeStep);
-  
-  Motor *motor = robot->getMotor("joint12");
-  
-  motor->setPosition(-0.52);
-  
-  double time = 0;
-  double pos = -0.52;
-
-  // Main loop:
-  // - perform simulation steps until Webots is stopping the controller
   while (robot->step(timeStep) != -1) {
-    
-    time += timeStep;
-    pos += 0.3*sin(time);
-    motor->setPosition(pos);
-    
-    // Read the sensors:
-    // Enter here functions to read sensor data, like:
-    //  double val = ds->getValue();
-
-    // Process sensor data here.
-
-    // Enter here functions to send actuator commands, like:
-  };
-
-  // Enter here exit cleanup code.
-
+    writePosition( 90., 90., 90. );
+    writePosition( 0., 90., 170. );
+    writePosition( 0., 160., 170. );
+    writePosition( 0., 30., 90. );
+    writePosition( 90., 90., 90. );
+  }
+  
+  // Exit cleanup code
+  
   delete robot;
+  delete joint11;
+  delete joint12;
+  delete joint13;
+  
   return 0;
 }

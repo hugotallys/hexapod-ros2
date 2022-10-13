@@ -1,0 +1,165 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.12457197857741896 0.0405917099313942 0.9913799146836457 2.5166753261862413
+  position 0.658664626161141 -0.4793544849733696 0.4135421797266183
+}
+Background {
+  skyColor [
+    0.592157 0.737255 0.784314
+  ]
+}
+DirectionalLight {
+  direction -1 0 -1
+  intensity 3
+}
+Robot {
+  translation 0 0 0.25
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0.0875 -0.0505 0
+      }
+      device [
+        RotationalMotor {
+          name "joint11"
+          minPosition -1.5708
+          maxPosition 1.5708
+        }
+      ]
+      endPoint Solid {
+        translation 0.0875 -0.0505 0
+        children [
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0.0225 -0.0295 0
+            }
+            device [
+              RotationalMotor {
+                name "joint12"
+                minPosition -1.5708
+                maxPosition 1.5708
+              }
+            ]
+            endPoint Solid {
+              translation 0.0225 -0.0295 0
+              rotation -0.5773502691896258 0.5773502691896258 -0.5773502691896258 2.0899999999999994
+              children [
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 0 1
+                    anchor 0.08 0 0
+                  }
+                  device [
+                    RotationalMotor {
+                      name "joint13"
+                      minPosition -1.5708
+                      maxPosition 1.5708
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0.08 0 0
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.15 0.15 0.15
+                          roughness 0.9
+                          metalness 0.1
+                        }
+                        geometry Mesh {
+                          url [
+                            "meshes/hexapodlink13.stl"
+                          ]
+                        }
+                      }
+                    ]
+                    name "link13"
+                    boundingObject Transform {
+                      translation -0.01 0.039984 -0.0200318
+                      rotation 1 0 0 1.57
+                      children [
+                        Capsule {
+                          height 0.11
+                          radius 0.017
+                          subdivision 16
+                        }
+                      ]
+                    }
+                    physics Physics {
+                    }
+                  }
+                }
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.15 0.15 0.15
+                    roughness 0.9
+                    metalness 0.1
+                  }
+                  geometry Mesh {
+                    url [
+                      "meshes/hexapodlink12.stl"
+                    ]
+                  }
+                }
+              ]
+              name "link12"
+              boundingObject Transform {
+                translation 0.04 0 0
+                children [
+                  Box {
+                    size 0.105 0.0249 0.02
+                  }
+                ]
+              }
+              physics Physics {
+              }
+            }
+          }
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.15 0.15 0.15
+              roughness 0.9
+              metalness 0.1
+            }
+            geometry Mesh {
+              url [
+                "meshes/hexapodlink11.stl"
+              ]
+            }
+          }
+        ]
+        name "link11"
+        boundingObject Box {
+          size 0.0596 0.05 0.0637
+        }
+        physics Physics {
+        }
+      }
+    }
+    Solid {
+      children [
+        Shape {
+          appearance DEF HEXAPOD_MAT PBRAppearance {
+            baseColor 0.15 0.15 0.15
+            roughness 0.9
+            metalness 0.1
+          }
+          geometry Mesh {
+            url [
+              "meshes/hexapodlink0.stl"
+            ]
+          }
+        }
+      ]
+      name "link0"
+    }
+  ]
+  name "hexapod-leg"
+  boundingObject Box {
+    size 0.2 0.165 0.0538
+  }
+  controller "hexapod_ik"
+}
