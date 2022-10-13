@@ -2,6 +2,8 @@
 
 Hexapod robot control.
 
+![](hexapod-kinematics.png)
+
 # Denavit hartenberg parameters (just body and 1 leg)
 
 * theta is the rotation along z-axis
