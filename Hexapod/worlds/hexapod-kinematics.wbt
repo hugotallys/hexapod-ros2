@@ -1,165 +1,39 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "../protos/Hexapod.proto"
+
 WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.1737466194351138 -0.06440876346049713 0.9826818525974516 3.840280551622603
-  position 0.5902701331336075 0.39743172152447226 0.48216652727325415
+  orientation -0.19855648245149202 0.03370043424010384 0.9795098794848976 2.812107212385712
+  position 0.7544697912800199 -0.275448322579606 0.2990671258352828
 }
 Background {
   skyColor [
-    0.886275 0.294118 0
+    0.509804 0.631373 0.886275
   ]
 }
 DirectionalLight {
   direction -1 0 -1
   intensity 3
 }
-Robot {
-  translation 0 0 0.25
+Hexapod {
+}
+Solid {
+  translation 0.1275 -0.1305 -0.07
   children [
-    HingeJoint {
-      jointParameters HingeJointParameters {
-        axis 0 0 1
-        anchor 0.0875 -0.0505 0
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
       }
-      device [
-        RotationalMotor {
-          name "joint11"
-          minPosition -1.5708
-          maxPosition 1.5708
-        }
-      ]
-      endPoint Solid {
-        translation 0.0875 -0.0505 0
-        children [
-          HingeJoint {
-            jointParameters HingeJointParameters {
-              anchor 0.0225 -0.0295 0
-            }
-            device [
-              RotationalMotor {
-                name "joint12"
-                minPosition -1.5708
-                maxPosition 1.5708
-              }
-            ]
-            endPoint Solid {
-              translation 0.0225 -0.0295 0
-              rotation -0.5773502691896257 0.5773502691896257 -0.5773502691896257 2.0899999999999994
-              children [
-                HingeJoint {
-                  jointParameters HingeJointParameters {
-                    axis 0 0 1
-                    anchor 0.08 0 0
-                  }
-                  device [
-                    RotationalMotor {
-                      name "joint13"
-                      minPosition -1.5708
-                      maxPosition 1.5708
-                    }
-                  ]
-                  endPoint Solid {
-                    translation 0.08 0 0
-                    children [
-                      Shape {
-                        appearance PBRAppearance {
-                          baseColor 0.15 0.15 0.15
-                          roughness 0.9
-                          metalness 0.1
-                        }
-                        geometry Mesh {
-                          url [
-                            "meshes/hexapodlink13.stl"
-                          ]
-                        }
-                      }
-                    ]
-                    name "link13"
-                    boundingObject Transform {
-                      translation -0.01 0.039984 -0.0200318
-                      rotation 1 0 0 1.57
-                      children [
-                        Capsule {
-                          height 0.11
-                          radius 0.017
-                          subdivision 16
-                        }
-                      ]
-                    }
-                    physics Physics {
-                    }
-                  }
-                }
-                Shape {
-                  appearance PBRAppearance {
-                    baseColor 0.15 0.15 0.15
-                    roughness 0.9
-                    metalness 0.1
-                  }
-                  geometry Mesh {
-                    url [
-                      "meshes/hexapodlink12.stl"
-                    ]
-                  }
-                }
-              ]
-              name "link12"
-              boundingObject Transform {
-                translation 0.04 0 0
-                children [
-                  Box {
-                    size 0.105 0.0249 0.02
-                  }
-                ]
-              }
-              physics Physics {
-              }
-            }
-          }
-          Shape {
-            appearance PBRAppearance {
-              baseColor 0.15 0.15 0.15
-              roughness 0.9
-              metalness 0.1
-            }
-            geometry Mesh {
-              url [
-                "meshes/hexapodlink11.stl"
-              ]
-            }
-          }
-        ]
-        name "link11"
-        boundingObject Box {
-          size 0.0596 0.05 0.0637
-        }
-        physics Physics {
-        }
+      geometry Sphere {
+        radius 0.01
+        subdivision 3
       }
-    }
-    Solid {
-      children [
-        Shape {
-          appearance DEF HEXAPOD_MAT PBRAppearance {
-            baseColor 0.15 0.15 0.15
-            roughness 0.9
-            metalness 0.1
-          }
-          geometry Mesh {
-            url [
-              "meshes/hexapodlink0.stl"
-            ]
-          }
-        }
-      ]
-      name "link0"
     }
   ]
-  name "hexapod-leg"
-  boundingObject Box {
-    size 0.2 0.165 0.0538
-  }
-  controller "hexapod_ik"
+  name "target"
 }

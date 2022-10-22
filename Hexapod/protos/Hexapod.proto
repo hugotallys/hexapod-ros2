@@ -1,0 +1,188 @@
+#VRML_SIM R2022b utf8
+PROTO Hexapod [
+    field SFVec3f translation  0 0 0
+    field SFString controller "hexapod_ik"
+]
+{
+    Robot {
+        translation IS translation
+        children [
+            HingeJoint {
+            jointParameters HingeJointParameters {
+                axis 0 0 -1
+                anchor 0.0875 -0.0505 0
+            }
+            device [
+                RotationalMotor {
+                name "joint11"
+                minPosition -1.5708
+                maxPosition 1.5708
+                }
+            ]
+            endPoint Solid {
+                translation 0.0875 -0.0505 0
+                rotation 1 0 0 3.1415
+                children [
+                HingeJoint {
+                    jointParameters HingeJointParameters {
+                    anchor 0 0.0295 0
+                    }
+                    device [
+                    RotationalMotor {
+                        name "joint12"
+                        minPosition -1.5708
+                        maxPosition 1.5708
+                    }
+                    ]
+                    endPoint Solid {
+                    translation 0 0.0295 0
+                    rotation 0.5773500897298334 0.577350358919501 0.577350358919501 2.0943
+                    children [
+                        HingeJoint {
+                        jointParameters HingeJointParameters {
+                            axis 0 0 1
+                            anchor 0.08 0 0
+                        }
+                        device [
+                            RotationalMotor {
+                            name "joint13"
+                            minPosition -1.5708
+                            maxPosition 1.5708
+                            }
+                        ]
+                        endPoint Solid {
+                            translation 0.08 0 0
+                            children [
+                            Solid {
+                                translation 0 0.1142 0
+                                rotation 0 0 1 1.5708
+                                children [
+                                Shape {
+                                    appearance PBRAppearance {
+                                    baseColor 1 0.333333 0
+                                    roughness 1
+                                    metalness 0
+                                    }
+                                    geometry Mesh {
+                                    url [
+                                        "../protos/meshes/hexapod.link.4.stl"
+                                    ]
+                                    }
+                                }
+                                ]
+                                name "link14"
+                                boundingObject Transform {
+                                translation -0.01 0.006 0
+                                children [
+                                    Shape {
+                                    geometry Sphere {
+                                        radius 0.01
+                                        subdivision 3
+                                    }
+                                    }
+                                ]
+                                }
+                                physics Physics {
+                                }
+                            }
+                            Shape {
+                                appearance PBRAppearance {
+                                baseColor 0.15 0.15 0.15
+                                roughness 0.9
+                                metalness 0.1
+                                }
+                                geometry Mesh {
+                                url [
+                                    "../protos/meshes/hexapod.link.3.stl"
+                                ]
+                                }
+                            }
+                            ]
+                            name "link13"
+                            boundingObject Transform {
+                            translation 0 0.03 0
+                            rotation 1 0 0 1.57
+                            children [
+                                Capsule {
+                                height 0.11
+                                radius 0.017
+                                subdivision 16
+                                }
+                            ]
+                            }
+                            physics Physics {
+                            }
+                        }
+                        }
+                        Shape {
+                        appearance PBRAppearance {
+                            baseColor 0.15 0.15 0.15
+                            roughness 0.9
+                            metalness 0.1
+                        }
+                        geometry Mesh {
+                            url [
+                            "../protos/meshes/hexapod.link.2.stl"
+                            ]
+                        }
+                        }
+                    ]
+                    name "link12"
+                    boundingObject Transform {
+                        translation 0.04 0 0.02
+                        children [
+                        Box {
+                            size 0.105 0.0249 0.02
+                        }
+                        ]
+                    }
+                    physics Physics {
+                    }
+                    }
+                }
+                Shape {
+                    appearance PBRAppearance {
+                    baseColor 0.15 0.15 0.15
+                    roughness 0.9
+                    metalness 0.1
+                    }
+                    geometry Mesh {
+                    url [
+                        "../protos/meshes/hexapod.link.1.stl"
+                    ]
+                    }
+                }
+                ]
+                name "link11"
+                boundingObject Box {
+                size 0.0596 0.05 0.0637
+                }
+                physics Physics {
+                }
+            }
+            }
+            Solid {
+            children [
+                Shape {
+                appearance DEF HEXAPOD_MAT PBRAppearance {
+                    baseColor 0.15 0.15 0.15
+                    roughness 0.9
+                    metalness 0.1
+                }
+                geometry Mesh {
+                    url [
+                    "../protos/meshes/hexapod.link.0.stl"
+                    ]
+                }
+                }
+            ]
+            name "link0"
+            }
+        ]
+        name "hexapod"
+        boundingObject Box {
+            size 0.2 0.165 0.0538
+        }
+        controller IS controller
+    }
+}
