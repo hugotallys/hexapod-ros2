@@ -1,0 +1,202 @@
+#VRML_SIM R2022b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# Just one leg of the Hexapod robot.
+
+PROTO HexapodLeg [
+    field SFVec3f       translation     0 0 0
+    field SFRotation    rotation        0 0 1 0
+    field SFString      controller      "hexapod_invkine"
+]
+{
+    Robot {
+        translation IS translation
+        rotation IS rotation
+        children [
+            HingeJoint {
+            jointParameters HingeJointParameters {
+                axis 0 0 -1
+                anchor 0.0875 -0.0505 0
+            }
+            device [
+                RotationalMotor {
+                name "joint11"
+                minPosition -1.5708
+                maxPosition 1.5708
+                }
+            ]
+            endPoint Solid {
+                translation 0.0875 -0.0505 0
+                rotation 1 2.775557564541303e-17 4.950399362245304e-17 3.1415
+                children [
+                HingeJoint {
+                    jointParameters HingeJointParameters {
+                    anchor 0 0.0295 0
+                    }
+                    device [
+                    RotationalMotor {
+                        name "joint12"
+                        minPosition -3.1415
+                        maxPosition 3.1415
+                    }
+                    ]
+                    endPoint Solid {
+                    translation 1.8882118091312355e-13 0.02949999987188034 1.3885430784632244e-06
+                    rotation 0.5773500816234066 0.5773503539913367 0.5773503719540881 2.0942999756737835
+                    children [
+                        HingeJoint {
+                        jointParameters HingeJointParameters {
+                            axis 0 0 1
+                            anchor 0.08 0 0
+                        }
+                        device [
+                            RotationalMotor {
+                            name "joint13"
+                            minPosition -3.1415
+                            maxPosition 3.1415
+                            }
+                        ]
+                        endPoint Solid {
+                            translation 0.08 0 0
+                            children [
+                            Solid {
+                                translation 0.1142 0 0
+                                rotation 0 1 0 0
+                                children [
+                                Shape {
+                                    appearance PBRAppearance {
+                                    baseColor 1 0.333333 0
+                                    roughness 1
+                                    metalness 0
+                                    }
+                                    geometry Mesh {
+                                    url [
+                                        "meshes/link14.stl"
+                                    ]
+                                    }
+                                }
+                                ]
+                                name "link14"
+                                contactMaterial "footTip"
+                                boundingObject Transform {
+                                translation -0.01 0.006 0
+                                children [
+                                    Shape {
+                                    geometry Sphere {
+                                        radius 0.01
+                                        subdivision 3
+                                    }
+                                    }
+                                ]
+                                }
+                                physics Physics {
+                                density 2725
+                                }
+                            }
+                            CadShape {
+                                url [
+                                "meshes/link13.dae"
+                                ]
+                            }
+                            ]
+                            name "link13"
+                            boundingObject Group {
+                            children [
+                                Transform {
+                                translation 0.019 0 0
+                                rotation 0 0.9999999999999999 0 1.5748
+                                children [
+                                    Capsule {
+                                    height 0.15
+                                    radius 0.0125
+                                    subdivision 16
+                                    }
+                                ]
+                                }
+                                Transform {
+                                translation -0.01 0 0
+                                children [
+                                    Box {
+                                    size 0.05 0.02 0.04
+                                    }
+                                ]
+                                }
+                            ]
+                            }
+                            physics Physics {
+                            density 2725
+                            }
+                        }
+                        }
+                        CadShape {
+                        url [
+                            "meshes/link12.dae"
+                        ]
+                        }
+                    ]
+                    name "link12"
+                    boundingObject Transform {
+                        translation 0.042 0 0.0229
+                        children [
+                        Box {
+                            size 0.105 0.03 0.005
+                        }
+                        ]
+                    }
+                    physics Physics {
+                        density 2725
+                    }
+                    }
+                }
+                DEF LINK11 CadShape {
+                    url [
+                    "meshes/link11.dae"
+                    ]
+                }
+                ]
+                name "link11"
+                boundingObject Group {
+                children [
+                    Transform {
+                    translation -0.007 0.029 -0.011
+                    children [
+                        Box {
+                        size 0.05 0.02 0.04
+                        }
+                    ]
+                    }
+                    Transform {
+                    translation -0.01 0 0
+                    children [
+                        Box {
+                        size 0.05 0.02 0.04
+                        }
+                    ]
+                    }
+                ]
+                }
+                physics Physics {
+                density 2725
+                }
+            }
+            }
+            
+            Solid {
+            children [
+                CadShape {
+                url [
+                    "meshes/link0.dae"
+                ]
+                }
+            ]
+            name "link0"
+            }
+        ]
+        name "hexapod"
+        boundingObject Box {
+            size 0.2 0.165 0.055
+        }
+        controller IS controller
+        supervisor TRUE
+    }
+}
