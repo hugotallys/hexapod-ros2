@@ -1,3 +1,2 @@
 Hexapod/worlds/*.wbproj
-Hexapod/controllers/hexapod_ik/build
-Hexapod/controllers/hexapod_ik/*.exe
+Hexapod/controllers/*/__pycache__
