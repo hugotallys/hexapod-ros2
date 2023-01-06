@@ -1,0 +1,33 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Hexapod.proto"
+
+WorldInfo {
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material2 "footTip"
+      coulombFriction [
+        10
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.192472162356837 -0.03874331939962605 0.9805373128645243 3.751639496526519
+  position 1.1109280619106154 0.9164953864606676 0.5965235762265042
+}
+Background {
+  skyColor [
+    0.509804 0.631373 0.886275
+  ]
+}
+DirectionalLight {
+  direction -1 0 -1
+  intensity 3
+}
+Floor {
+}
+Hexapod {
+}

@@ -1,13 +1,13 @@
-#VRML_SIM R2022b utf8
+#VRML_SIM R2023a utf8
 
-EXTERNPROTO "../protos/Hexapod.proto"
+EXTERNPROTO "../protos/HexapodLeg.proto"
 
 WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.19855648245149202 0.03370043424010384 0.9795098794848976 2.812107212385712
-  position 0.7544697912800199 -0.275448322579606 0.2990671258352828
+  orientation 0.15189260792405895 -0.01495248305794839 -0.9882838959066518 3.3355578429763795
+  position 0.8288815868055746 -0.2442846472988176 0.2455558724263671
 }
 Background {
   skyColor [
@@ -18,10 +18,8 @@ DirectionalLight {
   direction -1 0 -1
   intensity 3
 }
-Hexapod {
-}
-Solid {
-  translation 0.1275 -0.1305 -0.07
+DEF TARGET Solid {
+  translation 0.0875 -0.27 -0.01
   children [
     Shape {
       appearance PBRAppearance {
@@ -36,4 +34,6 @@ Solid {
     }
   ]
   name "target"
+}
+HexapodLeg {
 }
