@@ -19,6 +19,9 @@ class Hexapod:
             ) for joint in self.joints
         ]
         
+        # self.camera = self.robot.getDevice("camera")
+        # self.camera.enable(self.timestep)
+
         # self.sensors = [
         #     self.robot.getDevice(jname + "_sensor") for jname in self.joints_names
         # ]
