@@ -9,7 +9,7 @@ WorldInfo {
     ContactProperties {
       material2 "footTip"
       coulombFriction [
-        5
+        4
       ]
     }
   ]
