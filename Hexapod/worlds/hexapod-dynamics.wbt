@@ -9,7 +9,7 @@ WorldInfo {
     ContactProperties {
       material2 "footTip"
       coulombFriction [
-        4
+        10
       ]
     }
   ]
@@ -30,4 +30,6 @@ DirectionalLight {
 Floor {
 }
 Hexapod {
+  hidden rotation_7 -1 0 -6.27580671779967e-11 5.307156870259904e-06
+  hidden rotation_23 -1 0 2.0919355725998904e-11 5.307073192177323e-06
 }

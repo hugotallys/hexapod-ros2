@@ -5,7 +5,7 @@ from controller import Supervisor  # type: ignore
 
 class Hexapod:
 
-    w = np.pi
+    w = 1.0
     dt = 0.01
     t = np.arange(0., 2*np.pi/w, dt)
     q = np.zeros(shape=18)
@@ -98,15 +98,16 @@ class Hexapod:
     #         list(map(lambda s: s.getValue(), self.sensors))
     #     )
 
-    def step(self):
-        self.move()
-        self.setJointPositions(self.q)
+    def step(self, m=False):
+        if m:
+            self.move()
+            self.setJointPositions(self.q)
         return self.robot.step(self.timestep)
 
     def getTimeStep(self):
         return int(self.timestep) * 1e-3
 
-    def delay(self, ms):
+    def delay(self, ms, m=False):
         counter = ms / self.timestep
-        while (counter > 0) and (self.step() != -1):
+        while (counter > 0) and (self.step(m) != -1):
             counter -= 1

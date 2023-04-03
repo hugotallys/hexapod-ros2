@@ -6,11 +6,10 @@ from hexapod import Hexapod
 
 if __name__ == "__main__":
 
-    # Tripod robot
-    # A=.3, B=.15, q_init=[0., -1., 2.5], leg_phase=[0., np.pi, np.pi, 0., 0., np.pi]
-    
+    tripod_gait = np.array([0., 1., 1., 0., 0., 1.]) * np.pi
+
     robot = Hexapod(
-       A=.3, B=.2, leg_phase=[0., np.pi, np.pi, 0., 0., np.pi]
+       A=.2, B=.1, leg_phase=tripod_gait
     )
 
     # Initial joint configuration
@@ -34,14 +33,6 @@ if __name__ == "__main__":
     gait = np.random.randint(0, 3, size=100)
 
     while robot.step() != -1:
-
-      if gait[g] == 0:
         robot.straight()
-      elif gait[g] == 1:
-        robot.rotate(clockwise=True)
-      elif gait[g] == 2:
-        robot.rotate(clockwise=False)
-      
-      robot.delay(2000)
-
-      g = (g + 1) % len(gait)
+        robot.delay(5, m=True)
+        pass
