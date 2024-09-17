@@ -71,7 +71,7 @@ PROTO Hexapod [
                                     }
                                     geometry Mesh {
                                     url [
-                                        "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link14.stl"
+                                        "meshes/link14.stl"
                                     ]
                                     }
                                 }
@@ -95,7 +95,7 @@ PROTO Hexapod [
                             }
                             CadShape {
                                 url [
-                                "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link13.dae"
+                                "meshes/link13.dae"
                                 ]
                             }
                             ]
@@ -130,7 +130,7 @@ PROTO Hexapod [
                         }
                         CadShape {
                         url [
-                            "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link12.dae"
+                            "meshes/link12.dae"
                         ]
                         }
                     ]
@@ -150,7 +150,7 @@ PROTO Hexapod [
                 }
                 DEF LINK11 CadShape {
                     url [
-                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link11.dae"
+                    "meshes/link11.dae"
                     ]
                 }
                 ]
@@ -230,7 +230,7 @@ PROTO Hexapod [
                             children [
                             CadShape {
                                 url [
-                                "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link23.dae"
+                                "meshes/link23.dae"
                                 ]
                             }
                             Solid {
@@ -245,7 +245,7 @@ PROTO Hexapod [
                                     }
                                     geometry Mesh {
                                     url [
-                                        "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link14.stl"
+                                        "meshes/link14.stl"
                                     ]
                                     }
                                 }
@@ -299,7 +299,7 @@ PROTO Hexapod [
                         }
                         CadShape {
                         url [
-                            "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link22.dae"
+                            "meshes/link22.dae"
                         ]
                         }
                     ]
@@ -320,7 +320,7 @@ PROTO Hexapod [
                 }
                 CadShape {
                     url [
-                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link21.dae"
+                    "meshes/link21.dae"
                     ]
                 }
                 ]
@@ -413,7 +413,7 @@ PROTO Hexapod [
                                         }
                                         geometry Mesh {
                                         url [
-                                            "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link14.stl"
+                                            "meshes/link14.stl"
                                         ]
                                         }
                                     }
@@ -437,7 +437,7 @@ PROTO Hexapod [
                                 }
                                 CadShape {
                                     url [
-                                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link13.dae"
+                                    "meshes/link13.dae"
                                     ]
                                 }
                                 ]
@@ -472,7 +472,7 @@ PROTO Hexapod [
                             }
                             CadShape {
                             url [
-                                "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link12.dae"
+                                "meshes/link12.dae"
                             ]
                             }
                         ]
@@ -492,7 +492,7 @@ PROTO Hexapod [
                     }
                     CadShape {
                         url [
-                        "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link11.dae"
+                        "meshes/link11.dae"
                         ]
                     }
                     ]
@@ -577,7 +577,7 @@ PROTO Hexapod [
                                 children [
                                 CadShape {
                                     url [
-                                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link23.dae"
+                                    "meshes/link23.dae"
                                     ]
                                 }
                                 Solid {
@@ -592,7 +592,7 @@ PROTO Hexapod [
                                         }
                                         geometry Mesh {
                                         url [
-                                            "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link14.stl"
+                                            "meshes/link14.stl"
                                         ]
                                         }
                                     }
@@ -646,7 +646,7 @@ PROTO Hexapod [
                             }
                             CadShape {
                             url [
-                                "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link22.dae"
+                                "meshes/link22.dae"
                             ]
                             }
                         ]
@@ -667,7 +667,7 @@ PROTO Hexapod [
                     }
                     CadShape {
                         url [
-                        "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link21.dae"
+                        "meshes/link21.dae"
                         ]
                     }
                     ]
@@ -762,7 +762,7 @@ PROTO Hexapod [
                                         }
                                         geometry Mesh {
                                         url [
-                                            "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link14.stl"
+                                            "meshes/link14.stl"
                                         ]
                                         }
                                     }
@@ -786,7 +786,7 @@ PROTO Hexapod [
                                 }
                                 CadShape {
                                     url [
-                                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link13.dae"
+                                    "meshes/link13.dae"
                                     ]
                                 }
                                 ]
@@ -821,7 +821,7 @@ PROTO Hexapod [
                             }
                             CadShape {
                             url [
-                                "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link12.dae"
+                                "meshes/link12.dae"
                             ]
                             }
                         ]
@@ -841,7 +841,7 @@ PROTO Hexapod [
                     }
                     CadShape {
                         url [
-                        "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link11.dae"
+                        "meshes/link11.dae"
                         ]
                     }
                     ]
@@ -926,7 +926,7 @@ PROTO Hexapod [
                                 children [
                                 CadShape {
                                     url [
-                                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link23.dae"
+                                    "meshes/link23.dae"
                                     ]
                                 }
                                 Solid {
@@ -941,7 +941,7 @@ PROTO Hexapod [
                                         }
                                         geometry Mesh {
                                         url [
-                                            "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link14.stl"
+                                            "meshes/link14.stl"
                                         ]
                                         }
                                     }
@@ -995,7 +995,7 @@ PROTO Hexapod [
                             }
                             CadShape {
                             url [
-                                "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link22.dae"
+                                "meshes/link22.dae"
                             ]
                             }
                         ]
@@ -1016,7 +1016,7 @@ PROTO Hexapod [
                     }
                     CadShape {
                         url [
-                        "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link21.dae"
+                        "meshes/link21.dae"
                         ]
                     }
                     ]
@@ -1054,7 +1054,7 @@ PROTO Hexapod [
             children [
                 CadShape {
                 url [
-                    "C:/Users/hgtll/Projects/hexapod-ros2/Hexapod/protos/meshes/link0.dae"
+                    "meshes/link0.dae"
                 ]
                 }
             ]
